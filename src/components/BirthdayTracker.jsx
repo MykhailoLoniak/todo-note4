@@ -42,7 +42,7 @@ function BirthdayTracker() {
     setArrBirthday(newArrBirthday);
   };
   return (
-    <>
+    <div className='content'>
       <h3>Дні народження</h3>
       <div className={styles.form}>
         <form onSubmit={handleSubmit}>
@@ -94,9 +94,12 @@ function BirthdayTracker() {
             })
             .map((item) => (
               <li key={item.id}>
-                {new Date(item.date).getDate()}.
-                {new Date(item.date).getMonth() + 1}.
-                {new Date(item.date).getFullYear()} - {item.name}
+                <div className={styles.date}>
+                  {new Date(item.date).getDate()}.
+                  {new Date(item.date).getMonth() + 1}.
+                  {new Date(item.date).getFullYear()}{' '}
+                </div>{' '}
+                <div className={styles.text}> {item.name}</div>
                 <div className={styles.control}>
                   <MdOutlineEdit />
                   <MdOutlineDeleteForever
@@ -108,7 +111,7 @@ function BirthdayTracker() {
             ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

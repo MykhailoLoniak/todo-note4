@@ -1,13 +1,20 @@
 .birthday__List {
   margin: 0 auto;
   padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 .birthday__List ul li {
+  text-align: center;
   list-style: none;
-  text-align: left;
-  position: relative;
-  list-style: none;
-  text-align: left;
+}
+.date {
+  width: 100px;
+  display: inline-block;
+}
+.text {
+  width: 150px;
+  display: inline-block;
 }
 .hr {
   /* margin-top: 20px;
@@ -24,18 +31,9 @@
   margin: 0 auto;
 }
 
-.control {
-  position: absolute;
-  top: 0;
-  right: 30px;
-}
 .control svg {
   font-size: 20px;
 }
-@media screen and (max-width: 550px) {
-  .birthday__List {
-  }
-  .hide_label {
-    display: none;
-  }
+.control {
+  display: inline-block;
 }

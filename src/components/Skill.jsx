@@ -90,7 +90,7 @@ function Skill() {
 
   console.log(arrSkill);
   return (
-    <>
+    <div className='content'>
       <h3>Створити нову привичоку</h3>
       <div className={styles.form}>
         <form onSubmit={handleSubmit}>
@@ -214,7 +214,7 @@ function Skill() {
             <input
               type='number'
               placeholder='Кількість провальних днів'
-              value={editData.state}
+              value={editData.regres}
               onChange={(e) =>
                 setEditData({ ...editData, regres: e.target.value })
               }
@@ -223,7 +223,7 @@ function Skill() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

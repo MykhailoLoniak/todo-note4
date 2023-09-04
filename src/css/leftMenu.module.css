@@ -1,0 +1,13 @@
+nav {
+  border: 1px solid red;
+}
+nav > span {
+  display: inline-block;
+  padding: 5px;
+  width: 120px;
+  height: 15px;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid red;
+}

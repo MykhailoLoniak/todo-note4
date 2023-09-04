@@ -1,3 +1,9 @@
+.mainConteiner {
+  border: 1px solid red;
+}
+.content {
+}
+
 .hr {
   /* margin-top: 20px;
     margin-bottom: 20px; */
@@ -24,10 +30,6 @@
   position: relative;
   list-style: none;
   text-align: left;
-}
-.content {
-  display: inline-block;
-  margin: 0 auto;
 }
 .liConteiner {
   display: inline-block;
