@@ -90,7 +90,7 @@ function Skill() {
 
   console.log(arrSkill);
   return (
-    <div className='content'>
+    <div className='MainContent'>
       <h3>Створити нову привичоку</h3>
       <div className={styles.form}>
         <form onSubmit={handleSubmit}>
@@ -178,6 +178,7 @@ function Skill() {
                   <MdOutlineDeleteForever onClick={() => handleDelete(e.id)} />
                 </div>
               </li>
+              <div className='hr'></div>
             </div>
           ))}
         </ul>

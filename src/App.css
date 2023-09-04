@@ -3,26 +3,28 @@
   display: flex;
   justify-content: space-between;
 }
-.wrapper {
-  display: flex;
-  justify-content: space-between;
+.hr {
+  /* margin-top: 20px;
+    margin-bottom: 20px; */
+  border-top: 1px solid black;
+  height: 10px;
+}
+.active {
+  background-color: #2060af;
 }
 
 .left-menu {
-  width: 20%; /* Ширина лівого меню */
-  background-color: #f0f0f0;
+  width: 130px; /* Ширина лівого меню */
   padding: 5px;
 }
 
 .content {
   flex-grow: 1; /* Займає всі вільні місця залишені між лівим і правим меню */
-  background-color: #e0e0e0;
   padding: 5px;
 }
 
 .right-menu {
   width: 20%; /* Ширина правого меню */
-  background-color: #161515;
   padding: 5px;
 }
 
@@ -31,7 +33,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 850px) {
   .App {
     flex-direction: column; /* Змініть напрямок на вертикальний стовпчик */
     align-items: center; /* Вирівняйте елементи по центру горизонтально */

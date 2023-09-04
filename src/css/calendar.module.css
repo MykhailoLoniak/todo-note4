@@ -1,0 +1,78 @@
+.calendar {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+.containerMain {
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.header {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid gray;
+
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  padding: 10px;
+}
+
+.dayOfWeek {
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.day {
+  text-align: center;
+  padding: 10px;
+  background-color: #cecccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid gray;
+}
+
+.day:hover {
+  background-color: #f00b0b;
+}
+
+.emptyDay {
+  padding: 10px;
+}
+.today {
+  background-color: grey;
+}
+.button {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 15px;
+  background-color: #cecccc;
+}
+.yesterday {
+  background-color: #fff;
+}
+.hasNote {
+  position: relative;
+}
+
+.hasNote::before {
+  content: '\2022'; /* код символу для крапки */
+  position: absolute;
+  top: 50%;
+  left: 27px; /* відступ від лівого боку */
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ff0000; /* колір маркера */
+}

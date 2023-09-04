@@ -1,7 +1,8 @@
-.mainConteiner {
-  border: 1px solid red;
-}
-.content {
+.MainContent {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
 }
 
 .hr {
@@ -26,10 +27,7 @@
 
 .content ul li {
   list-style: none;
-  text-align: left;
-  position: relative;
-  list-style: none;
-  text-align: left;
+  text-align: center;
 }
 .liConteiner {
   display: inline-block;

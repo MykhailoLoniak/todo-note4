@@ -106,7 +106,7 @@ function BirthdayTracker() {
                     onClick={() => handleDelete(item.id)}
                   />
                 </div>
-                <div className={styles.hr}></div>
+                <div className='hr'></div>
               </li>
             ))}
         </ul>
