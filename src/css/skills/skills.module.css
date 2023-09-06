@@ -1,4 +1,6 @@
-.content {
+.MainContent {
+  text-align: center;
+  align-items: center;
   width: 100%;
 }
 .header {
@@ -10,30 +12,7 @@
   font-weight: bold;
   margin-top: 5px;
 }
-.birthday__List {
-  margin: 0 auto;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-.birthday__List ul li {
-  text-align: center;
-  list-style: none;
-}
-.date {
-  width: 100px;
-  display: inline-block;
-}
-.text {
-  width: 150px;
-  display: inline-block;
-}
-.control svg {
-  font-size: 20px;
-}
-.control {
-  display: inline-block;
-}
+
 
 
 
@@ -76,8 +55,6 @@ form {
   left: 0;
   translate: 10px 10px;
   color: #2060af;
-  background-color: #fff;
-  padding: 5px;
   transition: translate 500ms;
   scale: 500ms;
   display: inline-block;

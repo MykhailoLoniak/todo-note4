@@ -3,7 +3,7 @@ import NotFount from './components/NotFount';
 import MainLayout from './layouts/MainLayout';
 import BirthdayTracker from './components/BirthdayTracker';
 import Calendar from './components/Calendar';
-import Skill from './components/Skill';
+import Skills from './components/skills/Skills';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainLayout />}>
             <Route path='/' index element={<Calendar />} />
-            <Route path='skill' element={<Skill />} />
+            <Route path='skills' element={<Skills />} />
             <Route path='birthdayTracker' element={<BirthdayTracker />} />
             <Route path='*' element={<NotFount />} />
           </Route>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from '../../css/leftMenu.module.css';
+import styles from '../../css/menu/leftMenu.module.css';
 
 function LeftMenu() {
   return (
@@ -10,7 +10,7 @@ function LeftMenu() {
         </NavLink>
       </span>
       <span>
-        <NavLink to='skill'>Skill</NavLink>
+        <NavLink to='skills'>Skills</NavLink>
       </span>
       <span>
         {' '}

@@ -1,4 +1,4 @@
-import styles from '../../css/rightMenu.module.css';
+import styles from '../../css/menu/rightMenu.module.css';
 
 function RightMenu() {
   return (

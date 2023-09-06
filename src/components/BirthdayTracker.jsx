@@ -48,9 +48,7 @@ function BirthdayTracker() {
       </div>
       <div className={styles.form}>
         <form onSubmit={handleSubmit}>
-          <label htmlFor='date' className={styles.hide_label}>
-            Введіть дату
-          </label>
+        <div className={styles.inputGrup}> 
           <input
             className={styles.input}
             type='date'
@@ -58,10 +56,13 @@ function BirthdayTracker() {
             name='date'
             value={formData.date}
             onChange={handleInputChange}
+            required
           />
-          <label htmlFor='name' className={styles.hide_label}>
-            Введіть ім’я
+          <label htmlFor='date' className={styles.hide_label}>
+            Введіть дату
           </label>
+          </div>
+          <div className={styles.inputGrup}>
           <input
             className={styles.input}
             placeholder=''
@@ -70,7 +71,12 @@ function BirthdayTracker() {
             name='name'
             value={formData.name}
             onChange={handleInputChange}
+            required
           />
+          <label htmlFor='name' className={styles.hide_label}>
+            Введіть ім’я
+          </label>
+          </div>
           <button className={styles.button} type='submit'>
             Додати
           </button>

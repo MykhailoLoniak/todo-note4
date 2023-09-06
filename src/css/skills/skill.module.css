@@ -1,0 +1,72 @@
+.content ul li {
+    list-style: none;
+    text-align: center;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    margin: 5px 0;
+    display: flex;
+  }
+  
+  .liConteiner {
+    display: inline-block;
+    width: 200px;
+  }
+  .control {
+    margin: 5px;
+    display: inline-block;
+    top: 0;
+    right: 30px;
+  }
+  .control svg {
+    font-size: 20px;
+  }
+  .th1 {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: row-reverse; /* Розташування в зворотньому порядку (справа наліво) */
+    align-items: center; /* Вирівнюємо дати по вертикалі по центру */
+    
+}
+
+  .th2 {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: row-reverse; /* Розташування в зворотньому порядку (справа наліво) */
+    align-items: center; /* Вирівнюємо дати по вертикалі по центру */
+  }
+  .progress_container {
+    border-radius: 5px;
+    width: 100px;
+    height: 5px;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  .progress_inl {
+    display: inline-block;
+  }
+  .incr {
+    display: block;
+    height: 100%;
+    background-color: rgb(43, 194, 83);
+  
+    position: absolute; /* Змінено на absolute */
+    left: 0; /* Додано */
+    right: 0;
+    z-index: 2;
+  }
+  .regres {
+    display: block;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    position: absolute; /* Змінено на absolute */
+    left: 0; /* Додано */
+    right: 0;
+    z-index: 1;
+  }
+  .row {
+    display: inline-block;
+    display: flex;
+    align-items: center; /* Вирівнює th1 та th2 по вертикалі по центру */
+    margin-bottom: 5px; /* Додайте відступ між рядками за бажанням */
+  }
