@@ -42,8 +42,10 @@ function BirthdayTracker() {
     setArrBirthday(newArrBirthday);
   };
   return (
-    <div className='content'>
-      <h3>Дні народження</h3>
+    <div className={styles.content}>
+      <div className={styles.header}>
+        <h3>Дні народження</h3>
+      </div>
       <div className={styles.form}>
         <form onSubmit={handleSubmit}>
           <label htmlFor='date' className={styles.hide_label}>

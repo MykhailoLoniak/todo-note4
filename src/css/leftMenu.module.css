@@ -1,6 +1,18 @@
 nav {
 }
 nav > span {
+  /* display: inline-block;
+  padding: 5px;
+  width: 120px;
+  height: 15px; */
+  /* text-align: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #2060af;
+  margin-bottom: 5px; */
+}
+nav a {
+  text-decoration: none;
   display: inline-block;
   padding: 5px;
   width: 120px;
@@ -8,10 +20,10 @@ nav > span {
   text-align: center;
   align-items: center;
   border-radius: 8px;
-
-  margin-bottom: 5px;
-}
-nav a {
-  text-decoration: none;
   border: 1px solid #2060af;
+  margin-bottom: 5px;
+  color: #2060af;
+}
+nav a:hover {
+  box-shadow: 2px 2px 4px #357dd5;
 }

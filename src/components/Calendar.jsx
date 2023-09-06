@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../css/calendar.module.css';
 import arrData from './arrData';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
 const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
 const monthNames = [
@@ -103,13 +104,9 @@ function Calendar() {
     <div className={styles.calendar}>
       <div className={styles.containerMain}>
         <div className={styles.header}>
-          <span className={styles.button} onClick={handlePreviousMonth}>
-            back
-          </span>
-          Календар {monthNames[displayedMonth]} {displayedYear}
-          <span className={styles.button} onClick={handleNextMonth}>
-            next
-          </span>
+          <AiFillCaretLeft onClick={handlePreviousMonth} />
+          {monthNames[displayedMonth]} {displayedYear}
+          <AiFillCaretRight onClick={handleNextMonth} />
         </div>
         <div className={styles.days}>
           {daysOfWeek.map((day) => (

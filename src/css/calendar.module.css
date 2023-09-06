@@ -1,23 +1,25 @@
 .calendar {
-  width: 100%;
   font-family: Arial, sans-serif;
+  width: 100%;
 }
 .containerMain {
-  margin-left: 20px;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
-  margin-top: 5px;
 }
 .header {
-  background-color: #f2f2f2;
+  margin-top: 5px;
+  background-color: #2060af;
+  border-radius: 8px;
   text-align: center;
   padding: 10px;
-  border: 1px solid gray;
-
+  color: white;
   font-weight: bold;
-  border-radius: 25px;
+}
+.header svg {
+  font-size: 20px;
+  padding: 0 10px 0 10px;
 }
 
 .days {
@@ -36,30 +38,23 @@
 .day {
   text-align: center;
   padding: 10px;
-  background-color: #cecccc;
+  background-color: #729ed5;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border: 1px solid gray;
+  border: 1px solid #2060af;
 }
 
 .day:hover {
-  background-color: #f00b0b;
+  background-color: #122c4c;
 }
 
 .emptyDay {
   padding: 10px;
 }
 .today {
-  background-color: grey;
+  background-color: #2060af;
 }
-.button {
-  display: inline-block;
-  padding: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 15px;
-  background-color: #cecccc;
-}
+
 .yesterday {
   background-color: #fff;
 }

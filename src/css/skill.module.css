@@ -1,33 +1,76 @@
 .MainContent {
-  display: inline-block;
-  margin: 0 auto;
   text-align: center;
   align-items: center;
+  width: 100%;
+}
+.header {
+  background-color: #2060af;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
-.hr {
-  /* margin-top: 20px;
-    margin-bottom: 20px; */
-  border-top: 1px solid black;
-  height: 10px;
-}
-.input {
-  text-align: center;
-  align-items: center;
-}
-.form {
-  display: inline-block;
-  margin: 0 auto;
+form {
+  display: flex;
+  flex: 1;
 }
 @media screen and (max-width: 550px) {
   .form .input {
     width: 80px;
   }
 }
+.inputGrup {
+  position: relative;
+}
+.input {
+  font: inherit;
+  color: #2060af;
+  padding: 10px;
+  border: 1px solid #2060af;
+  border-radius: 8px;
+  outline: 2px solid #fff;
+  background-color: transparent;
+  transition: outline-color 500ms;
+  display: inline-block;
+}
+.input:is(:focus, :valid) {
+  outline-color: #2060af;
+}
+.hide_label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 10px 10px;
+  color: #2060af;
+  transition: translate 500ms;
+  scale: 500ms;
+  display: inline-block;
+}
+.input:focus + .hide_label,
+.input:valid + .hide_label {
+  padding-inline: 5px;
+  translate: 10px -14px;
+  scale: 0.8;
+  background-color: #2060af;
+  border-radius: 8px;
+  color: #fff;
+}
+.button {
+  padding: 10px;
+  background-color: #2060af;
+  border-radius: 8px;
+  display: inline-block;
+}
 
 .content ul li {
   list-style: none;
   text-align: center;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+  margin: 5px 0;
 }
 .liConteiner {
   display: inline-block;
@@ -73,5 +116,25 @@
 .control svg {
   font-size: 20px;
 }
-.modul {
+.mainRow {
+  display: inline-block;
+}
+.row {
+  display: inline-block;
+  display: flex;
+  align-items: center; /* Вирівнює th1 та th2 по вертикалі по центру */
+  margin-bottom: 5px; /* Додайте відступ між рядками за бажанням */
+}
+.th1 {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: row-reverse; /* Розташування в зворотньому порядку (справа наліво) */
+  align-items: center; /* Вирівнюємо дати по вертикалі по центру */
+}
+
+.th2 {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: row-reverse; /* Розташування в зворотньому порядку (справа наліво) */
+  align-items: center; /* Вирівнюємо дати по вертикалі по центру */
 }

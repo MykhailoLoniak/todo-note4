@@ -2,6 +2,7 @@
   text-align: center;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
 .hr {
   /* margin-top: 20px;
@@ -11,6 +12,7 @@
 }
 .active {
   background-color: #2060af;
+  color: white;
 }
 
 .left-menu {
@@ -24,7 +26,7 @@
 }
 
 .right-menu {
-  width: 20%; /* Ширина правого меню */
+  width: 300px; /* Ширина правого меню */
   padding: 5px;
 }
 
@@ -33,10 +35,16 @@
   padding: 0;
 }
 
+@media screen and (min-width: 1000px) {
+  .App {
+    width: 1000px;
+  }
+}
 @media screen and (max-width: 850px) {
   .App {
     flex-direction: column; /* Змініть напрямок на вертикальний стовпчик */
     align-items: center; /* Вирівняйте елементи по центру горизонтально */
+    width: 800px;
   }
 
   .left-menu,
@@ -54,5 +62,15 @@
     border-top: 1px solid red; /* Додайте верхню межу */
     margin-top: 10px; /* Додайте відступ між правим меню та контентом */
     padding: 10px 0; /* Додайте відступи зверху та знизу */
+  }
+}
+@media screen and (max-width: 600px) {
+  .App {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .App {
+    width: 350px;
   }
 }
