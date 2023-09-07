@@ -13,45 +13,27 @@
 .birthday__List {
   margin: 0 auto;
   padding: 10px;
-  display: flex;
-  justify-content: center;
 }
-.birthday__List ul li {
-  text-align: center;
+.birthday__List ul {
   list-style: none;
-}
-.date {
-  width: 100px;
-  display: inline-block;
 }
 .text {
   width: 150px;
   display: inline-block;
 }
-.control svg {
-  font-size: 20px;
-}
-.control {
-  display: inline-block;
-}
-
-
-
-
 form {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-top: 15px;
-  
 }
 @media screen and (max-width: 550px) {
   .form .input {
     width: 80px;
   }
 }
+
 .inputGrup {
   position: relative;
-
 }
 .input {
   font: inherit;
@@ -64,7 +46,6 @@ form {
   transition: outline-color 500ms;
   display: inline-block;
   margin-left: 5px;
-  
 }
 
 .input:is(:focus, :valid) {
@@ -100,6 +81,4 @@ form {
   display: inline-block;
   height: 40px;
   margin-left: 5px;
-
 }
-

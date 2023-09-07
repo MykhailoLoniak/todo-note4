@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NotFount from './components/NotFount';
 import MainLayout from './layouts/MainLayout';
-import BirthdayTracker from './components/BirthdayTracker';
+import BirthdayTracker from './components/birthdayTracker/BirthdayTracker';
 import Calendar from './components/Calendar';
 import Skills from './components/skills/Skills';
 import './App.css';

@@ -1,0 +1,26 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  margin: 5px 0;
+  background-color: #f5f5f5;
+}
+.date {
+  width: 100px;
+  display: inline-block;
+}
+.text {
+  width: 100%;
+  display: inline-block;
+}
+.control svg {
+  font-size: 20px;
+}
+.control {
+  width: 50px;
+  display: inline-block;
+  right: 0;
+}
