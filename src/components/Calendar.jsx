@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../css/calendar.module.css';
 import arrData from './arrData';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
+import Modal from './Modal';
 
 const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
 const monthNames = [
@@ -111,7 +112,7 @@ function Calendar() {
         <div className={styles.days}>
           {daysOfWeek.map((day) => (
             <div key={day} className={styles.dayOfWeek}>
-              {day}
+              <Modal>{day}</Modal>
             </div>
           ))}
           {Array.from({ length: startingDay }, (_, i) => (

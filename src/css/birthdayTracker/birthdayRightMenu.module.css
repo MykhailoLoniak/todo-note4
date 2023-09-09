@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid #729ed5;
+  border-radius: 8px;
+  height: 195px;
+  overflow: auto;
+}
+.container li {
+  margin: 0;
+}
+/* Стилізація самої смуги прокрутки */
+::-webkit-scrollbar {
+  width: 4px; /* Ширина смуги */
+}
+
+/* Стилізація візуальної частини смуги прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: #2060af; /* Колір смуги прокрутки */
+  border-radius: 8px; /* Закруглені кути */
+}
+
+/* Стилізація фону смуги прокрутки */
+::-webkit-scrollbar-track {
+  background-color: #729ed5; /* Колір фону смуги */
+  border-radius: 8px;
+}

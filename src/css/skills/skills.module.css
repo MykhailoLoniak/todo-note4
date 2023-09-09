@@ -10,18 +10,12 @@
   padding: 10px;
   color: white;
   font-weight: bold;
-  margin-top: 5px;
 }
-
-
-
-
 
 form {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-top: 15px;
-  
 }
 @media screen and (max-width: 550px) {
   .form .input {
@@ -30,7 +24,6 @@ form {
 }
 .inputGrup {
   position: relative;
-
 }
 .input {
   font: inherit;
@@ -43,7 +36,6 @@ form {
   transition: outline-color 500ms;
   display: inline-block;
   margin-left: 5px;
-  
 }
 
 .input:is(:focus, :valid) {
@@ -77,6 +69,4 @@ form {
   display: inline-block;
   height: 40px;
   margin-left: 5px;
-
 }
-

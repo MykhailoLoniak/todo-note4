@@ -24,11 +24,6 @@ const arrData = [
     name: ' Катерина Бандаровська',
     id: 5,
   },
-  {
-    date: new Date(2021, 8, 1),
-    name: ' Катерина Бандаровська',
-    id: 5,
-  },
 ];
 
 export default arrData;

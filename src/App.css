@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  margin-top: 5px;
 }
 .hr {
   /* margin-top: 20px;
     margin-bottom: 20px; */
-  border-top: 1px solid black;
+  border-top: 5px solid black;
   height: 10px;
 }
 .active {
@@ -17,17 +18,17 @@
 
 .left-menu {
   width: 130px; /* Ширина лівого меню */
-  padding: 5px;
+  padding: 0 5px 0 0;
 }
 
 .content {
   flex-grow: 1; /* Займає всі вільні місця залишені між лівим і правим меню */
-  padding: 5px;
+  padding: 0 5px;
 }
 
 .right-menu {
-  width: 300px; /* Ширина правого меню */
-  padding: 5px;
+  width: 400px; /* Ширина правого меню */
+  padding: 0 0 0 5px;
 }
 
 * {

@@ -4,12 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 import arrData from '../arrData';
 import BirthdayList from './BirthdayList';
 
-function BirthdayTracker() {
+function BirthdayTracker({ sortedBirthdays, setArrBirthday, arrBirthday }) {
   const [formData, setFormData] = useState({
     date: '',
     name: '',
   });
-  const [arrBirthday, setArrBirthday] = useState(arrData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,8 +79,9 @@ function BirthdayTracker() {
 
       <div className={styles.birthday__List}>
         <BirthdayList
-          arrBirthday={arrBirthday}
           setArrBirthday={setArrBirthday}
+          arrBirthday={arrBirthday}
+          sortedBirthdays={sortedBirthdays}
         />
       </div>
     </div>

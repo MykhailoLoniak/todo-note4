@@ -8,7 +8,6 @@
   padding: 10px;
   color: white;
   font-weight: bold;
-  margin-top: 5px;
 }
 .birthday__List {
   margin: 0 auto;
@@ -25,6 +24,10 @@ form {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  border: 1px solid #2060af;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 10px;
 }
 @media screen and (max-width: 550px) {
   .form .input {
@@ -34,6 +37,8 @@ form {
 
 .inputGrup {
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 .input {
   font: inherit;
@@ -77,6 +82,7 @@ form {
 .button {
   padding: 10px;
   background-color: #2060af;
+  border: 1px solid #2060af;
   border-radius: 8px;
   display: inline-block;
   height: 40px;
