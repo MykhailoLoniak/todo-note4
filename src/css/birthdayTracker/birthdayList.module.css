@@ -3,11 +3,11 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #2060af;
   border-radius: 8px;
   margin: 5px 0;
-  background-color: #729ed5;
-  color: white;
+  background-color: #fff;
+  color: #2060af;
 }
 .date {
   width: 100px;

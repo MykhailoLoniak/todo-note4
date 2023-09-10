@@ -17,18 +17,18 @@ function Modal(props) {
       closeModal();
     }
   };
+
   return (
     <div className='modalContainer'>
       <div onClick={openModal}>{props.children}</div>
       {isModalOpen && (
         <div className='modal-overlay' onClick={handleOverlayClick}>
           <div className='modal'>
-            <h2>Модальне вікно</h2>
-            <p>Це спливаюче модальне вікно.</p>
+            {props.form} {/* Вставляємо форму через props.form */}
             <AiOutlineCloseCircle
               onClick={closeModal}
               style={{ color: '#2060af', fontSize: '25px' }}
-            />
+              />
             {/* <button onClick={closeModal}>Закрити</button> */}
           </div>
         </div>
@@ -36,5 +36,5 @@ function Modal(props) {
     </div>
   );
 }
-
-export default Modal;
+  
+  export default Modal;

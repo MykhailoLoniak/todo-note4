@@ -38,14 +38,16 @@
   border-radius: 8px;
   text-align: center;
   padding: 10px;
-  background-color: #729ed5;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  color: #2060af;
   border: 1px solid #2060af;
 }
 
 .day:hover {
-  background-color: #122c4c;
+  background-color: #2060af;
+  color: #fff;
+ 
 }
 
 .emptyDay {
@@ -53,10 +55,12 @@
 }
 .today {
   background-color: #2060af;
+  color: #fff;
+
 }
 
 .yesterday {
-  background-color: #fff;
+  background-color: #ebe9e9;
 }
 .hasNote {
   position: relative;

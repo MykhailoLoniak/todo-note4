@@ -1,7 +1,6 @@
 .container {
-  border: 1px solid #729ed5;
   border-radius: 8px;
-  height: 195px;
+  height: 193px;
   overflow: auto;
 }
 .container li {
@@ -20,6 +19,6 @@
 
 /* Стилізація фону смуги прокрутки */
 ::-webkit-scrollbar-track {
-  background-color: #729ed5; /* Колір фону смуги */
+  border: 1px solid #729ed5;
   border-radius: 8px;
 }

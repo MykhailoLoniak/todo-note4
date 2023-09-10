@@ -1,7 +1,7 @@
 .content ul li {
   list-style: none;
   text-align: center;
-  background-color: #2060af;
+  border: 1px solid #2060af;
   border-radius: 8px;
   margin: 5px 0;
   display: flex;
