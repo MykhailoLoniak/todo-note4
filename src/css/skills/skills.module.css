@@ -15,7 +15,10 @@
 form {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: -20px;
 }
 @media screen and (max-width: 550px) {
   .form .input {
