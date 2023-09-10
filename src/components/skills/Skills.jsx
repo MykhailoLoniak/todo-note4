@@ -12,7 +12,7 @@ function Skills() {
     number: 0,
     state: 0,
     regres: 0,
-    date: [new Date(2023, 8, 3)],
+    date: [new Date()],
   });
   const [arrSkill, setArrSkill] = useState(arraySkill);
   const [skillProgres, setSkillProgres] = useState(0);
@@ -70,21 +70,7 @@ function Skills() {
         <form onSubmit={handleSubmit}>
           <div className={styles.inputGrup}>
             <input
-              className={styles.input}
-              type='number'
-              id='number'
-              name='number'
-              value={formSkill.number}
-              onChange={handleInputChange}
-              required
-            />
-            <label  htmlFor='number' className={styles.hide_label}>
-              Кількісь днів
-            </label>
-          </div>
-          <div className={styles.inputGrup}>
-            <input
-              className={styles.input}
+              className={`${styles.input} ${styles.inputName}`}
               placeholder=''
               type='text'
               id='name'
@@ -93,8 +79,22 @@ function Skills() {
               onChange={handleInputChange}
               required
             />
-            <label htmlFor='name' className={styles.hide_label}>
+            <label htmlFor='name' className={`${styles.hide_label}  ${styles.inputName}`}>
               назва
+            </label>
+          </div>
+          <div className={styles.inputGrup}>
+            <input
+              className={`${styles.input} ${styles.inputNamber}`}
+              type='number'
+              id='number'
+              name='number'
+              value={formSkill.number}
+              onChange={handleInputChange}
+              required
+            />
+            <label  htmlFor='number'  className={`${styles.hide_label} ${styles.inputNamber}`} >
+              Кількісь днів
             </label>
           </div>
           <button className={styles.button} type='submit'>

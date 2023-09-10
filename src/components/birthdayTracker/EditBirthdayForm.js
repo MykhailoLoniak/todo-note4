@@ -1,44 +1,59 @@
 import React, { useState } from 'react';
+import arrData from '../arrData';
 
-function EditBirthdayForm(props) {
-  const { birthday, onSave, onCancel } = props;
-  const [editedName, setEditedName] = useState(birthday ? birthday.name : ''); // Перевірка birthday на null
-  const [editedDate, setEditedDate] = useState(birthday ? birthday.date : ''); // Перевірка birthday на null
 
-  const handleNameChange = (e) => {
-    setEditedName(e.target.value);
-  };
-
-  const handleDateChange = (e) => {
-    setEditedDate(e.target.value);
-  };
-
-  const handleSave = () => {
-    onSave(birthday.id, editedName, new Date(editedDate));
-  };
-
+function EditBirthdayForm({arrBirthday, setArrBirthday,editData, setEditData }) {
+ 
+  const saveEditData = () => {
+    // Знайдіть індекс елемента, який ви редагуєте
+    const index = arrData.findIndex((e) => e.id === editData.id);
+    if (index !== -1) {
+      // Оновіть дані в arrBirthday
+      arrData[index] = { ...editData };
+      // Закрийте модальне вікно
+      setEditData({
+        date: new Date(),
+        name: '',
+        id: null,
+      });
+    }
+  console.log(arrData);
+  }
   return (
-    <div>
-      <h2>Редагування імені та дати</h2>
-      <label>
-        Нове ім'я:
-        <input
-          type="text"
-          value={editedName}
-          onChange={handleNameChange}
-        />
-      </label>
-      <label>
-        Нова дата:
-        <input
-          type="date"
-          value={editedDate}
-          onChange={handleDateChange}
-        />
-      </label>
-      <button onClick={handleSave}>Зберегти</button>
-      <button onClick={onCancel}>Скасувати</button>
+    <div className='modul'>
+        {editData.id && (
+          <div className='editModal'>
+            <div className='hr'></div>
+            <h3>Редагувати запис {editData.name}</h3>
+            <input
+              type='text'
+              placeholder='ID'
+              value={editData.id}
+              onChange={(e) =>
+                setEditData({ ...editData, id: e.target.value })
+              }
+            />
+            <input
+            type='date'
+            placeholder='Дата'
+            value={editData.date.toISOString().split('T')[0]} // Використовуємо toISOString() для формату дати
+            onChange={(e) => setEditData({ ...editData, date: new Date(e.target.value) })}
+          />
+            <input
+              type='text'
+              placeholder='Ім’я'
+              value={editData.name}
+              onChange={(e) =>
+                setEditData({ ...editData, name: e.target.value })
+              }
+            />
+           
+            <button onClick={saveEditData}>Зберегти</button>
+          </div>
+        )}
+      
     </div>
+    
   );
 }
 

@@ -11,24 +11,10 @@
 }
 .birthday__List {
   margin: 0 auto;
-  padding: 10px;
 }
-.birthday__List ul {
-  list-style: none;
-}
-.text {
-  width: 150px;
-  display: inline-block;
-}
-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  border: 1px solid #2060af;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 0 10px;
-}
+
+
+
 @media screen and (max-width: 550px) {
   .form .input {
     width: 80px;
@@ -43,14 +29,13 @@ form {
 .input {
   font: inherit;
   color: #2060af;
-  padding: 10px;
   border: 1px solid #2060af;
+  padding: 10px;
   border-radius: 8px;
   outline: 2px solid #fff;
   background-color: transparent;
   transition: outline-color 500ms;
   display: inline-block;
-  margin-left: 5px;
 }
 
 .input:is(:focus, :valid) {
@@ -80,11 +65,16 @@ form {
 }
 
 .button {
-  padding: 10px;
   background-color: #2060af;
-  border: 1px solid #2060af;
   border-radius: 8px;
-  display: inline-block;
-  height: 40px;
-  margin-left: 5px;
+  border: 1px solid #2060af;
+  color: #fff;
+  padding: 14px;
+  flex: 1 0 60px;
+}
+.inputNamber{
+  flex: 1 0 120px;
+}
+.inputName{
+  flex: 1 0 140px;
 }

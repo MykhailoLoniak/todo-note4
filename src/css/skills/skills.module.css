@@ -11,14 +11,17 @@
   color: white;
   font-weight: bold;
 }
+.form{
+  margin-bottom: -23px;
 
+}
 form {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px ;
   justify-content: center;
-  margin: 0;
-  padding: 0;
-  margin-top: 5px;
-  margin-bottom: -20px;
+  align-items: center;
+  margin-top: 4px;
 }
 @media screen and (max-width: 550px) {
   .form .input {
@@ -27,6 +30,8 @@ form {
 }
 .inputGrup {
   position: relative;
+  display: inline-block;
+
 }
 .input {
   font: inherit;
@@ -37,8 +42,6 @@ form {
   outline: 2px solid #fff;
   background-color: transparent;
   transition: outline-color 500ms;
-  display: inline-block;
-  margin-left: 5px;
 }
 
 .input:is(:focus, :valid) {
@@ -52,7 +55,6 @@ form {
   color: #2060af;
   transition: translate 500ms;
   scale: 500ms;
-  display: inline-block;
 }
 .input:focus + .hide_label,
 .input:valid + .hide_label {
@@ -60,16 +62,23 @@ form {
   translate: 10px -14px;
   scale: 0.8;
   background-color: #2060af;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 8px;
   color: #fff;
 }
 
 .button {
-  padding: 10px;
   background-color: #2060af;
   border-radius: 8px;
-  display: inline-block;
-  height: 40px;
-  margin-left: 5px;
+  border: 1px solid #2060af;
+  color: #fff;
+  padding: 14px;
+
+  flex: 1 0 60px;
+}
+.inputNamber{
+  flex: 1 0 120px;
+}
+.inputName{
+  flex: 1 0 140px;
 }

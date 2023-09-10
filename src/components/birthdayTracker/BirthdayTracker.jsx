@@ -44,21 +44,7 @@ function BirthdayTracker({ sortedBirthdays, setArrBirthday, arrBirthday }) {
         <form onSubmit={handleSubmit}>
           <div className={styles.inputGrup}>
             <input
-              className={styles.input}
-              type='date'
-              id='date'
-              name='date'
-              value={formData.date}
-              onChange={handleInputChange}
-              required
-            />
-            <label htmlFor='date' className={styles.hide_label}>
-              Введіть дату
-            </label>
-          </div>
-          <div className={styles.inputGrup}>
-            <input
-              className={styles.input}
+              className={`${styles.input} ${styles.inputName}`}
               placeholder=''
               type='text'
               id='name'
@@ -69,6 +55,20 @@ function BirthdayTracker({ sortedBirthdays, setArrBirthday, arrBirthday }) {
             />
             <label htmlFor='name' className={styles.hide_label}>
               Введіть ім’я
+            </label>
+          </div>
+          <div className={styles.inputGrup}>
+            <input
+              className={`${styles.input} ${styles.inputNamber}`}
+              type='date'
+              id='date'
+              name='date'
+              value={formData.date}
+              onChange={handleInputChange}
+              required
+            />
+            <label htmlFor='date' className={styles.hide_label}>
+              Введіть дату
             </label>
           </div>
           <button className={styles.button} type='submit'>

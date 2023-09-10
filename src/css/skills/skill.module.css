@@ -9,7 +9,7 @@
 
 .liConteiner {
   display: inline-block;
-  width: 200px;
+  /* width: 200px; */
 }
 .control {
   margin: 5px;
