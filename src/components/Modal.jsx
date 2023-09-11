@@ -3,15 +3,8 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import '../css/modal.css';
 
 function Modal(props) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openModal, closeModal, isModalOpen, setIsModalOpen } = props;
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains('modal-overlay')) {
       closeModal();
@@ -28,7 +21,7 @@ function Modal(props) {
             <AiOutlineCloseCircle
               onClick={closeModal}
               style={{ color: '#2060af', fontSize: '25px' }}
-              />
+            />
             {/* <button onClick={closeModal}>Закрити</button> */}
           </div>
         </div>
@@ -36,5 +29,5 @@ function Modal(props) {
     </div>
   );
 }
-  
-  export default Modal;
+
+export default Modal;
