@@ -21,12 +21,6 @@ function EditBirthdayForm({
       });
 
       // Закрийте модальне вікно та скиньте дані
-      setEditData({
-        date: new Date(),
-        name: '',
-        id: null,
-      });
-
       setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
     }
   };
@@ -41,11 +35,7 @@ function EditBirthdayForm({
           <input
             type='date'
             placeholder='Дата'
-            value={
-              editData.date
-                ? editData.date.toLocaleDateString()
-                : new Date().toLocaleDateString()
-            }
+            value={editData.date.toLocaleDateString()}
             onChange={(e) =>
               setEditData({ ...editData, date: new Date(e.target.value) })
             }
@@ -62,6 +52,6 @@ function EditBirthdayForm({
       )}
     </div>
   );
-}
+};
 
 export default EditBirthdayForm;
