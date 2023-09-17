@@ -52,6 +52,9 @@ function App() {
   const rawBirthday = localStorage.getItem('arrBirthday')
   const parseBirthday = JSON.parse(rawBirthday)
   const [arrBirthday, setArrBirthday] = useState(rawBirthday?parseBirthday:arrData);
+  localStorage.setItem('arrSkill', JSON.stringify(arrSkill));
+
+
 
   // Divide the birthdays into two arrays: past and future
   const pastBirthdays = [];

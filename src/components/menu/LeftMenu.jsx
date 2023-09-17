@@ -22,7 +22,7 @@ function LeftMenu() {
             className={ styles.burgerBar}
           ></div>
       </div>
-      <div className={styles.container}>
+      <div className={tach? styles.container:styles.containerBurger}>
         <span>
           <NavLink to='/' end>
             Calendar

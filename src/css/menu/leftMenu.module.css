@@ -1,15 +1,5 @@
-nav {
-}
-nav > span {
-  /* display: inline-block;
-  padding: 5px;
-  width: 120px;
-  height: 15px; */
-  /* text-align: center;
-  align-items: center;
-  border-radius: 8px;
-  border: 1px solid #2060af;
-  margin-bottom: 5px; */
+.container{
+  /* display: flex; */
 }
 nav a {
   text-decoration: none;
@@ -67,7 +57,7 @@ nav a:hover {
   /* Стилі для другої лінії (перекресні лінії хрестика) */
   .burgerButton.active .activDayNignt:nth-child(2) {
     opacity: 0;
-    :aliceblue ;
+    background-color:aliceblue ;
   }
 
   /* Стилі для першої та третьої ліній хрестика */
@@ -86,6 +76,32 @@ nav a:hover {
     opacity: 0;
     background-color:aliceblue ;
   }
+  .containerBurger {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: -5px;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 5px;
+    width: 120px;
+    height: 15px;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #2060af;
+    margin-bottom: 5px;
+    color: #2060af;
+    padding: 14px;
+   margin-top: 10px;
+  }
+  nav a:hover {
+    box-shadow: 2px 2px 4px #357dd5;
+  }
 }               
 .overlay {
   position: fixed;
@@ -94,5 +110,5 @@ nav a:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8); /* Змініть прозорість якщо потрібно */
-  z-index: 10; /* Позиціонуйте поверх інших елементів */
+  z-index: 5; /* Позиціонуйте поверх інших елементів */
 }

@@ -65,7 +65,7 @@ function Skills({ arrSkill, setArrSkill, moveTodayToBack, }) {
               required
             />
             <label htmlFor='number' className={styles.hide_label}>
-              Введіть кількість днів
+              Тривалість
             </label>
           </div>
           <div className={styles.inputGrup}>
@@ -80,7 +80,7 @@ function Skills({ arrSkill, setArrSkill, moveTodayToBack, }) {
               required
             />
             <label htmlFor='name' className={styles.hide_label}>
-              Введіть назву привички
+              назва
             </label>
           </div>
           <button className={styles.button} type='submit'>
