@@ -1,7 +1,10 @@
-.MainContent {
-  text-align: center;
+.container{
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
   width: 100%;
+ 
 }
 .header {
   background-color: #2060af;
@@ -9,39 +12,29 @@
   text-align: center;
   padding: 10px;
   color: white;
-  font-weight: bold;
 }
-.form{
-  margin-bottom: -23px;
 
-}
-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px ;
-  justify-content: center;
-  align-items: center;
-  margin-top: 4px;
-}
 @media screen and (max-width: 550px) {
   .form .input {
     width: 80px;
   }
 }
+
 .inputGrup {
   position: relative;
-  display: inline-block;
-
+  display: flex;
+  justify-content: space-between;
 }
 .input {
   font: inherit;
   color: #2060af;
-  padding: 10px;
   border: 1px solid #2060af;
+  padding: 10px;
   border-radius: 8px;
   outline: 2px solid #fff;
   background-color: transparent;
   transition: outline-color 500ms;
+  display: inline-block;
 }
 
 .input:is(:focus, :valid) {
@@ -53,8 +46,11 @@ form {
   left: 0;
   translate: 10px 10px;
   color: #2060af;
+  background-color: #fff;
+  padding: 5px;
   transition: translate 500ms;
   scale: 500ms;
+  display: inline-block;
 }
 .input:focus + .hide_label,
 .input:valid + .hide_label {
@@ -62,7 +58,7 @@ form {
   translate: 10px -14px;
   scale: 0.8;
   background-color: #2060af;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 8px;
   color: #fff;
 }
@@ -73,7 +69,6 @@ form {
   border: 1px solid #2060af;
   color: #fff;
   padding: 14px;
-
   flex: 1 0 60px;
 }
 .inputNamber{

@@ -1,163 +1,144 @@
-import { useState } from "react";
-import arraySkill from "../arrSkill";
 import {
   MdOutlineDeleteForever,
   MdOutlineEdit,
   MdCheck,
   MdClose,
 } from "react-icons/md";
-import {
-  BiLoaderCircle
-} from "react-icons/bi";
+import {AiOutlineCloseCircle, AiOutlineCheckCircle} from "react-icons/ai";
 import styles from "../../css/skills/skill.module.css";
+import { v4 as uuidv4 } from 'uuid';
+import { useState } from "react";
+import Modal from "../Modal";
+import EditSkillForm from "./EditSkillForm";
+import arrData from "../arrData";
 
-function Skill(props) {
-  const {
-    editData,
-    setEditData,
-    arrSkill,
-    setArrSkill,
-    skillProgres,
-    setSkillProgres,
-  } = props;
 
-  const renderDays = () => {
-    const arrDays = [];
-    const today = new Date();
-    let date;
-    for (let i = 0; i < 7; i++) {
-      date = new Date(today);
-      arrDays.push(date);
-      date.setDate(today.getDate() - i);
-    }
-    return arrDays;
-  };
-
-  function compareDates(date1, date2) {
-    return (
-      date1.getDate() === date2.getDate() &&
-      date1.getMonth() === date2.getMonth() &&
-      date1.getFullYear() === date2.getFullYear()
-    );
-  }
-  const handleSkillIncement = (e) => {
-    arrSkill[e].state = arrSkill[e].state + 1;
-    setSkillProgres(skillProgres + 1);
-  };
-  const handleSkillDecrement = (e) => {
-    arrSkill[e].regres = arrSkill[e].regres + 1;
-    setSkillProgres(skillProgres - 1);
-  };
-  const checkTodo = () => {
-    const newDate = new Date(); // Створюємо нову дату
-    setEditData((prevData) => ({
-      ...prevData,
-      date: [...prevData.date, newDate], // Додаємо нову дату до масиву date
-    }));
-  };
-  const openEditModal = (e) => {
-    setEditData({
-      id: e.id,
-      name: e.name,
-      number: e.number,
-      state: e.state,
-      regres: e.regres,
+function Skill({ arrSkill, setArrSkill, moveTodayToBack }) {
+    const [renderProgres ,setRenderProgres] = useState()
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [editData, setEditData] = useState({
+    name: '',
+    numberOfDays: 0,
+    state:  0,
+    dayMissed: 0,
+    id: null,
+    arrDate: [],
+    listOfDaysPassed:[],
+    listOfMissedDays:[],
     });
-  };
-  const handleDelete = (i) => {
-    const newArrSkill = arrSkill.filter((e) => i !== e.id);
-    setArrSkill(newArrSkill);
-  };
+    function decrements(e) {
+      e.arrDate = [...e.arrDate, new Date()];
+      e.listOfDaysPassed = [...e.listOfDaysPassed, new Date()];
+      setArrSkill(moveTodayToBack([...arrSkill]))
+      localStorage.setItem('arrSkill', JSON.stringify(arrSkill));
+      setRenderProgres(e.dayMissed++)
+    }
+    function increments(e) {
+      e.arrDate = [...e.arrDate, new Date()];
+      e.listOfMissedDays = [...e.listOfMissedDays, new Date()];
+      setArrSkill(moveTodayToBack([...arrSkill]))
+      localStorage.setItem('arrSkill', JSON.stringify(arrSkill));
+      setRenderProgres(e.state++)
+    }
 
-  return (
-    <>
-      <div className={styles.content}>
-      
-        <ul>
-          {arrSkill.map((e, index) => (
-            <div key={e.id}>
-              <li>
-                <div className={styles.liConteiner}>
-                  {e.name}
-                  {e.state}/{e.number}{" "}
-                </div>
-                  <div className={styles.row}>
-                    {renderDays()
-                      .reverse()
-                      .map((date, i) => {
-                        const isDay = editData.date.some((dateInArray) =>
-                          compareDates(dateInArray, date)
-                        );
-                        return (
-                          <div key={i}>
-                            <span className={styles.th1}>{date.getDate()}</span>
-                            <span className={styles.th2}>
-                              {isDay ? (
-                                <MdCheck key={`check-${i}`} />
-                              ) : (
-                                <MdClose key={`close-${i}`} />
-                              )}
-                            </span>
-                          </div>
-                        );
-                      })}
-                      {/* відображення прогресу  */}
-                    <div className={styles.progress_inl}>
-                      <div className={styles.progress_container}>
-                        <div
-                          className={styles.incr}
-                          style={{ width: `${(e.state / e.number) * 100}%` }}
-                        ></div>{" "}
-                        <div
-                          className={styles.regres}
-                          style={{
-                            width: `${
-                              (e.state / e.number) * 100 +
-                              (e.regres / e.number) * 100
-                            }%`,
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                </div>
-                {/*  кнопки додавання віднімання 
-                <button
-                  onClick={() => {
-                    if (
-                      arrSkill[index].state + arrSkill[index].regres <
-                      arrSkill[index].number
-                    ) {
-                      handleSkillDecrement(index);
-                    }
-                  }}
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => {
-                    if (
-                      arrSkill[index].state + arrSkill[index].regres <
-                      arrSkill[index].number
-                    ) {
-                      handleSkillIncement(index);
-                    }
-                  }}
-                >
-                  +
-                </button> */}
-                {/* кнопки видалити редагувати */}
-                <div className={styles.control}>
-                  <button onClick={() => checkTodo(index, e.id)}>sdfghj</button>
-                  <MdOutlineEdit onClick={() => openEditModal(e)} />
-                  <MdOutlineDeleteForever onClick={() => handleDelete(e.id)} />
-                </div>
-              </li>
+    function isLastDateToday(arrDate) {
+      if (arrDate.length === 0) {
+        return false; // Масив порожній, дата не може бути сьогодні
+      }
+      const lastDate = new Date(arrDate[arrDate.length - 1]);
+      const today = new Date();
+      return (
+        lastDate.getFullYear() === today.getFullYear() &&
+        lastDate.getMonth() === today.getMonth() &&
+        lastDate.getDate() === today.getDate()
+      );
+    }
+    const handleDelete = (id) => {
+      const updatedSkills = arrSkill.filter((item) => item.id !== id);
+      setArrSkill(updatedSkills);
+      localStorage.setItem('arrSkill', JSON.stringify(updatedSkills))
+    };
+    const openEditModal = (e) => {
+      setEditData({
+        numberOfDays: e.numberOfDays,
+        name: e.name,
+        id: e.id,
+
+        state:  e.state,
+        dayMissed: e.dayMissed,
+        arrDate: e.arrDate,
+        listOfDaysPassed: e.listOfDaysPassed,
+        listOfMissedDays:e.listOfMissedDays,
+      });
+    };
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+   return (
+    <ul>
+      {arrSkill.map((e)=>
+        <li key={e.id}>
+          <div className={styles.state}>
+            {e.state + e.dayMissed} / {e.numberOfDays}
+          </div>
+          <div className={styles.text}>
+            {e.name}
+          </div>
+            <div className={styles.progress}>
+          <div className={styles.progress_inl}>
+            <div className={styles.progress_container}>
+              <div
+                className={styles.incr}
+                style={{ width: `${(e.state / e.numberOfDays) * 100}%` }}
+              ></div>{" "}
+              <div
+                className={styles.regres}
+                style={{
+                  width: `${
+                    (e.state / e.numberOfDays) * 100 +
+                    (e.dayMissed / e.numberOfDays) * 100
+                  }%`,
+                }}
+              ></div>
             </div>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
+          </div>
+          {!isLastDateToday(e.arrDate) ?  (
+            <div className={styles.progressControl}>
+              <AiOutlineCloseCircle className={styles.button} onClick={() => decrements(e)} />
+              <AiOutlineCheckCircle className={styles.button} onClick={() => increments(e)} />
+            </div>
+          ) : ''}
+            
+            </div>
+          <div>
+          <Modal
+              form={
+                <EditSkillForm
+                  arrSkill={arrSkill}
+                  setArrSkill={setArrSkill}
+                  editData={editData}
+                  setEditData={setEditData}
+                  isModalOpen={isModalOpen}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              }
+              openModal={openModal}
+              closeModal={closeModal}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            >
+              <MdOutlineEdit onClick={() => openEditModal(e)} />
+            </Modal>
+            <MdOutlineDeleteForever onClick={()=>handleDelete(e.id)}/>
+          </div>
+        </li>
+      )}
+    </ul>
+   )
 }
 
 export default Skill;

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import arrData from '../arrData';
 
-function EditBirthdayForm({
-  arrBirthday,
-  setArrBirthday,
+function EditSkillForm({
+  arrSkill,
+  setArrSkill,
   editData,
   setEditData,
   isModalOpen,
@@ -11,13 +10,13 @@ function EditBirthdayForm({
 }) {
   const saveEditData = () => {
     // Знайдіть індекс елемента, який ви редагуєте
-    const index = arrBirthday.findIndex((e) => e.id === editData.id);
+    const index = arrSkill.findIndex((e) => e.id === editData.id);
     if (index !== -1) {
-      // Оновіть дані в arrBirthday
-      setArrBirthday((prevArr) => {
+      // Оновіть дані в arrSkill
+      setArrSkill((prevArr) => {
         const newArr = [...prevArr];
         newArr[index] = { ...editData };
-        localStorage.setItem('arrBirthday', JSON.stringify(newArr))
+        localStorage.setItem('arrSkill', JSON.stringify(newArr));
         return newArr;
       });
       // Закрийте модальне вікно та скиньте дані
@@ -32,27 +31,25 @@ function EditBirthdayForm({
           <h3>Редагувати запис {editData.name}</h3>
 
           <input
-            type='date'
-            placeholder='Дата'
-            value={`${new Date(editData.date).getFullYear()}-${(new Date (editData.date + 1).getMonth())
-              .toString()
-              .padStart(2, '0')}-${new Date(editData.date).getDate().toString().padStart(2, '0')}`}
+            type='number'
+            placeholder='Кількість днів'
+            value={editData.numberOfDays} // Зміни тут
             onChange={(e) =>
-              setEditData({ ...editData, date: new Date(e.target.value) })
+                setEditData({ ...editData, numberOfDays: e.target.value })
             }
-          />
-          <input
+            />
+            <input
             type='text'
-            placeholder='Ім’я'
-            value={editData.name}
+            placeholder='Назва'
+            value={editData.name} // Зміни тут
             onChange={(e) => setEditData({ ...editData, name: e.target.value })}
-          />
+            />
 
           <button onClick={saveEditData}>Зберегти</button>
         </div>
       )}
     </div>
   );
-};
+}
 
-export default EditBirthdayForm;
+export default EditSkillForm;

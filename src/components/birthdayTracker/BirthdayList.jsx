@@ -12,6 +12,19 @@ function BirthdayList(props) {
     id: null,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  function yearsUser(user) {
+    const diffInMilliseconds = new Date().getTime() - new Date(user.date).getTime();
+    const years = Math.floor(diffInMilliseconds / (365.25 * 24 * 60 * 60 * 1000));
+
+if (years == 1) {
+  return 'рік.';
+} else if (years < 5) {
+  return 'роки.';
+} else {
+  return 'років.';
+}
+  }
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,6 +37,7 @@ function BirthdayList(props) {
   const handleDelete = (id) => {
     const updatedBirthdays = arrBirthday.filter((item) => item.id !== id);
     setArrBirthday(updatedBirthdays);
+    localStorage.setItem('arrBirthday', JSON.stringify(updatedBirthdays))
   };
 
   const openEditModal = (e) => {
@@ -45,11 +59,14 @@ function BirthdayList(props) {
               alignItems: 'center',
             }}
           >
-            {item.date.getDate()}.{item.date.getMonth() + 1}.
-            {item.date.getFullYear()}
+            {new Date(item.date).getDate()}.{new Date(item.date).getMonth() + 1}.
+            {new Date(item.date).getFullYear()}
           </div>
           <div className={styles.text}>
-            {item.name} {new Date().getFullYear() - item.date.getFullYear()}
+            {item.name} {Math.floor(Math.floor(new Date().getTime() - new Date(item.date).getTime()) / (365.25 * 24 * 60 * 60 * 1000))} 
+            <span>
+              {` ${yearsUser(item)}`}
+            </span>
           </div>
           <div className={styles.control}>
             <Modal

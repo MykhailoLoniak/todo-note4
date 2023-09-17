@@ -1,10 +1,28 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../../css/menu/leftMenu.module.css';
+import { useState } from 'react';
 
 function LeftMenu() {
+  const [tach, setTach] = useState(true)
   return (
     <div className='left-menu'>
       <nav>
+      <div
+          className={`${styles.burgerButton} ${!tach ? styles.active : ''}`}
+          onClick={() => setTach(!tach)}
+        >
+          {' '}
+          <div
+            className={ styles.burgerBar}
+          ></div>
+          <div
+            className={styles.burgerBar}
+          ></div>
+          <div
+            className={ styles.burgerBar}
+          ></div>
+      </div>
+      <div className={styles.container}>
         <span>
           <NavLink to='/' end>
             Calendar
@@ -17,7 +35,11 @@ function LeftMenu() {
           {' '}
           <NavLink to='birthdayTracker'>BirthdayTracker</NavLink>
         </span>
+      </div>
       </nav>
+      {!tach && (
+        <div className={styles.overlay} onClick={() => setTach(true)}></div>
+      )}
     </div>
   );
 }

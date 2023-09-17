@@ -60,7 +60,8 @@
 }
 
 .yesterday {
-  background-color: #ebe9e9;
+  /* background-color: #ebe9e9; */
+  border: 1px solid rgb(206, 206, 206);
 }
 .hasNote {
   position: relative;

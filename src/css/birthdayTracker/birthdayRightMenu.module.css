@@ -1,10 +1,13 @@
 .container {
   border-radius: 8px;
-  height: 200px;
+  max-height: 200px;
   overflow: auto;
+  overflow-x: hidden;
 }
 .container li {
   margin: 0;
+  padding: 0 5px;
+  margin-bottom: 2px;
 }
 /* Стилізація самої смуги прокрутки */
 ::-webkit-scrollbar {
@@ -21,4 +24,13 @@
 ::-webkit-scrollbar-track {
   border: 1px solid #729ed5;
   border-radius: 8px;
+}
+.h5{
+  display: inline-block;
+  background-color: #2060af;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2px;
 }

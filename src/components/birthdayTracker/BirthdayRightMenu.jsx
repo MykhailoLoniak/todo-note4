@@ -27,12 +27,25 @@ function BirthdayRightMenu({ sortedBirthdays }) {
     setDaysUntilBirthday(daysUntilBirthdays);
   }, [sortedBirthdays]);
 
+  function days(day) {
+
+if (day == 1) {
+  return 'день.';
+} else if (day < 5) {
+  return 'дні.';
+} else {
+  return 'днів.';
+}
+  }
+
+ 
   return (
     <div className={styles.container}>
+      <h5 className={styles.h5}>Дні Народження</h5>
       <ul>
         {daysUntilBirthday.map((e, index) => (
-          <li key={index}>
-            {e.name} - {e.daysUntilBirthday} днів до дня народження
+          <li key={index} style={{ height:'25px', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis'}}>
+            {e.daysUntilBirthday} {days(e.daysUntilBirthday)} -{e.name} 
           </li>
         ))}
       </ul>

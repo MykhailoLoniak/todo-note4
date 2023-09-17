@@ -4,6 +4,7 @@
   justify-content: space-between;
   margin: 0 auto;
   margin-top: 5px;
+  color: #2060af;
 }
 .hr {
   /* margin-top: 20px;
@@ -17,7 +18,7 @@
 }
 
 .left-menu {
-  width: 130px; /* Ширина лівого меню */
+  width: 150px; /* Ширина лівого меню */
   padding: 0 5px 0 0;
 }
 
@@ -67,11 +68,16 @@
 }
 @media screen and (max-width: 600px) {
   .App {
-    width: 400px;
+    width: 100%;
   }
+
 }
-@media screen and (max-width: 400px) {
-  .App {
-    width: 350px;
-  }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px ;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
 }

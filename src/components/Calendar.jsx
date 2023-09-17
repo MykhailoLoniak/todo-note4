@@ -27,11 +27,25 @@ function Calendar() {
   const [date, setDate] = useState(new Date());
   const currentDay = currentDate.getDate();
   const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
-
   // Визначення першого дня місяця
   const firstDayOfMonth = new Date(displayedYear, displayedMonth, 1).getDay();
   const startingDay = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  const openEditModal = (day) => {
+    console.log(day);
+    // setEditData({
+    //   date: e.date,
+    //   name: e.name,
+    //   id: e.id,
+    // });
+  };
   const renderDays = () => {
     const days = [];
 
@@ -109,10 +123,13 @@ function Calendar() {
           {monthNames[displayedMonth]} {displayedYear}
           <AiFillCaretRight onClick={handleNextMonth} />
         </div>
-        <div className={styles.days}>
+        <div className={styles.days} >
           {daysOfWeek.map((day) => (
-            <div key={day} className={styles.dayOfWeek}>
-              <Modal>{day}</Modal>
+            <div key={day} className={styles.dayOfWeek}  onClick={() => openEditModal(day)} >
+              <Modal  openModal={openModal}
+              closeModal={closeModal}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}>{day}</Modal>
             </div>
           ))}
           {Array.from({ length: startingDay }, (_, i) => (

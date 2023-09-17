@@ -1,4 +1,4 @@
-const arrData = [
+let   arrData = [
   {
     date: new Date(2014, 2, 17),
     name: ' Олександр Лоняк',

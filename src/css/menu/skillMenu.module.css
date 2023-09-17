@@ -1,0 +1,85 @@
+.container {
+  border-radius: 8px;
+  max-height: 200px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.container li {
+  margin: 0;
+  padding: 0 5px;
+  margin-bottom: 2px;
+}
+/* Стилізація самої смуги прокрутки */
+::-webkit-scrollbar {
+  width: 4px; /* Ширина смуги */
+}
+
+/* Стилізація візуальної частини смуги прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: #2060af; /* Колір смуги прокрутки */
+  border-radius: 8px; /* Закруглені кути */
+}
+
+/* Стилізація фону смуги прокрутки */
+::-webkit-scrollbar-track {
+  border: 1px solid #729ed5;
+  border-radius: 8px;
+}
+.h5{
+  display: inline-block;
+  background-color: #2060af;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2px;
+}
+
+
+.progressControl{
+    display: inline-block;
+  }
+.progress_container {
+  border-radius: 6px;
+  width: 30px;
+  height: 15px;
+  border: 1px solid #2060af;
+  background-color: #f0f0f0;
+  position: relative;
+}
+.progress_inl {
+  display: inline-block;
+  border-radius: 6px;
+  
+}
+.incr {
+  display: block;
+  height: 100%;
+  background-color: #2060af;
+  border-radius: 6px;
+  position: absolute; /* Змінено на absolute */
+  left: 0; /* Додано */
+  right: 0;
+  z-index: 2;
+}
+.regres {
+  display: block;
+  height: 100%;
+  background-color: #c4c3c3;
+  position: absolute; /* Змінено на absolute */
+  left: 0; /* Додано */
+  right: 0;
+  z-index: 1;
+  border-radius: 6px;
+}
+.button{
+  border: none;
+  background-color: white;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2060af;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
